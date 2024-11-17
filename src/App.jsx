@@ -21,11 +21,9 @@ const App = () => {
               <Route path="/listings/:id" element={<PropertyDetailPage />} />
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/login" element={<LoginForm />} />
-              <Route
-                path="/listings"
-                element={
+              <Route path="/listings" element={
                   <PrivateRoute>
-                    <div>Protected Listings Page</div> {/* Placeholder for listings */}
+                    <div> Protected Listings Page</div> {/* Placeholder for listings */}
                   </PrivateRoute>
                 }
               />
