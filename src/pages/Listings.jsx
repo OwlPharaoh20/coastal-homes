@@ -1,36 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-const properties = [
-  {
-    id: '1',
-    name: 'Modern Family Home',
-    image: '/assets/properties/property1.jpg',
-    price: '$450,000',
-    location: 'Miami, Florida',
-  },
-  {
-    id: '2',
-    name: 'Luxurious Beachfront Villa',
-    image: '/assets/properties/property2.jpg',
-    price: '$1,200,000',
-    location: 'Malibu, California',
-  },
-  {
-    id: '3',
-    name: 'Cozy Countryside Cottage',
-    image: '/assets/properties/property3.jpg',
-    price: '$300,000',
-    location: 'Asheville, North Carolina',
-  },
-];
+import properties from '../properties';
 
 const Listings = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const propertiesPerPage = 10;
+
+  const indexOfLastProperty = currentPage * propertiesPerPage;
+  const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
+  const currentProperties = properties.slice(indexOfFirstProperty, indexOfLastProperty);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(properties.length / propertiesPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
   return (
     <div className="container mx-auto mt-8 p-6">
       <h2 className="text-3xl font-bold mb-6 text-center">Property Listings</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {properties.map((property) => (
+        {currentProperties.map((property) => (
           <div key={property.id} className="bg-white rounded shadow p-4">
             <img
               src={property.image}
@@ -48,6 +39,33 @@ const Listings = () => {
             </Link>
           </div>
         ))}
+      </div>
+      <div className="flex justify-center mt-8">
+        <button
+          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 mr-4"
+          onClick={() => paginate(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        {pageNumbers.map((pageNumber) => (
+          <button
+            key={pageNumber}
+            className={`p-2 rounded hover:bg-blue-600 mr-4 ${
+              currentPage === pageNumber ? 'bg-blue-500 text-white' : ''
+            }`}
+            onClick={() => paginate(pageNumber)}
+          >
+            {pageNumber}
+          </button>
+        ))}
+        <button
+          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          onClick={() => paginate(currentPage + 1)}
+          disabled={currentPage === pageNumbers.length}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
