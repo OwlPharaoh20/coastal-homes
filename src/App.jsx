@@ -22,6 +22,12 @@ const App = () => {
               <Route path="/property/:id" element={<PropertyDetailPage />} />
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/login" element={<LoginForm />} />
+              <Route path="/listings/:page" element={
+                  <PrivateRoute>
+                    <Listings />
+                  </PrivateRoute>
+                }
+              />
               <Route path="/listings" element={
                   <PrivateRoute>
                     <Listings />

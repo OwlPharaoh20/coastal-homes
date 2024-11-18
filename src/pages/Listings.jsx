@@ -1,21 +1,32 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import properties from '../properties';
 
 const Listings = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const { page } = useParams();
+  const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(page ? parseInt(page) : 1);
   const propertiesPerPage = 10;
 
   const indexOfLastProperty = currentPage * propertiesPerPage;
   const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
   const currentProperties = properties.slice(indexOfFirstProperty, indexOfLastProperty);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    navigate(`/listings/${pageNumber}`);
+  };
 
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(properties.length / propertiesPerPage); i++) {
     pageNumbers.push(i);
   }
+
+  useEffect(() => {
+    if (page) {
+      setCurrentPage(parseInt(page));
+    }
+  }, [page]);
 
   return (
     <div className="container mx-auto mt-8 p-6">
