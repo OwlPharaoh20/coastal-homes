@@ -8,6 +8,7 @@ import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
 import PrivateRoute from './components/PrivateRoute';
 import { AuthProvider } from './context/AuthContext';
+import Listings from './pages/Listings';
 
 const App = () => {
   return (
@@ -18,12 +19,12 @@ const App = () => {
           <div className="flex-grow">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/listings/:id" element={<PropertyDetailPage />} />
+              <Route path="/property/:id" element={<PropertyDetailPage />} />
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/login" element={<LoginForm />} />
               <Route path="/listings" element={
                   <PrivateRoute>
-                    <div> Protected Listings Page</div> {/* Placeholder for listings */}
+                    <Listings />
                   </PrivateRoute>
                 }
               />
