@@ -1,6 +1,9 @@
+// pages/Listings.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import properties from '../properties';
+import SearchBar from '../components/SearchBar';
+import FilterProperties from '../components/FilterProperties';
 
 const Listings = () => {
   const { page } = useParams();
@@ -30,6 +33,8 @@ const Listings = () => {
 
   return (
     <div className="container mx-auto mt-8 p-6">
+      <SearchBar />
+      <FilterProperties properties={properties} />
       <h2 className="text-3xl font-bold mb-6 text-center">Property Listings</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {currentProperties.map((property) => (
