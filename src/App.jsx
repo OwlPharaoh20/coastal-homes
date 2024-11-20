@@ -1,3 +1,4 @@
+// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -9,6 +10,7 @@ import LoginForm from './components/LoginForm';
 import PrivateRoute from './components/PrivateRoute';
 import { AuthProvider } from './context/AuthContext';
 import Listings from './pages/Listings';
+import UserProfile from './components/UserProfile';
 
 const App = () => {
   return (
@@ -34,6 +36,7 @@ const App = () => {
                   </PrivateRoute>
                 }
               />
+              <Route path="/profile" element={<UserProfile />} />
             </Routes>
           </div>
           <Footer />
