@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import properties from "../properties";
 import ReviewForm from "../components/ReviewForm";
 import ReviewsList from "../components/ReviewsList";
+import PropertyMap from "../components/PropertyMap";
 
 const PropertyDetail = () => {
   const { id } = useParams();
@@ -25,12 +26,16 @@ const PropertyDetail = () => {
       <p className="text-lg font-semibold mb-4">Location: {property.location}</p>
       <p className="text-gray-700">{property.description}</p>
 
-      {/* Review Section */}
+      {/* Map Section */}
+      <div className="mt-8">
+        <h3 className="text-2xl font-semibold mb-4">Location Map</h3>
+        <PropertyMap lat={property.lat} lng={property.lng} />
+      </div>
+
+      {/* Reviews Section */}
       <div className="mt-10">
         <h3 className="text-2xl font-semibold mb-4">Reviews</h3>
-        {/* Review Form */}
         <ReviewForm propertyId={id} />
-        {/* Reviews List */}
         <ReviewsList propertyId={id} />
       </div>
     </div>

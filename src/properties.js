@@ -21,6 +21,8 @@ const properties = [
     image: property1Image,
     price: '$450,000',
     location: 'Miami, Florida',
+    lat: 25.7617,
+    lng: -80.1918,
   },
   {
     id: '2',
@@ -28,6 +30,8 @@ const properties = [
     image: property2Image,
     price: '$1,200,000',
     location: 'Malibu, California',
+    lat: 34.0259,
+    lng: -118.7798,
   },
   {
     id: '3',
@@ -35,6 +39,8 @@ const properties = [
     image: property3Image,
     price: '$300,000',
     location: 'Asheville, North Carolina',
+    lat: 35.5951,
+    lng: -82.5515,
   },
   {
     id: '4',
@@ -42,6 +48,8 @@ const properties = [
     image: property4Image,
     price: '$800,000',
     location: 'New York City, New York',
+    lat: 40.7128,
+    lng: -74.0060,
   },
   {
     id: '5',
@@ -49,6 +57,8 @@ const properties = [
     image: property5Image,
     price: '$250,000',
     location: 'Chicago, Illinois',
+    lat: 41.8781,
+    lng: -87.6298,
   },
   {
     id: '6',
@@ -56,6 +66,8 @@ const properties = [
     image: property6Image,
     price: '$600,000',
     location: 'Park City, Utah',
+    lat: 40.6461,
+    lng: -111.4980,
   },
   {
     id: '7',
@@ -63,6 +75,8 @@ const properties = [
     image: property7Image,
     price: '$1,500,000',
     location: 'San Francisco, California',
+    lat: 37.7749,
+    lng: -122.4194,
   },
   {
     id: '8',
@@ -70,6 +84,8 @@ const properties = [
     image: property8Image,
     price: '$400,000',
     location: 'Nashville, Tennessee',
+    lat: 36.1627,
+    lng: -86.7816,
   },
   {
     id: '9',
@@ -77,6 +93,8 @@ const properties = [
     image: property9Image,
     price: '$2,000,000',
     location: 'Las Vegas, Nevada',
+    lat: 36.1699,
+    lng: -115.1398,
   },
   {
     id: '10',
@@ -84,6 +102,8 @@ const properties = [
     image: property10Image,
     price: '$350,000',
     location: 'Outer Banks, North Carolina',
+    lat: 35.5585,
+    lng: -75.4665,
   },
   {
     id: '11',
@@ -91,6 +111,8 @@ const properties = [
     image: property11Image,
     price: '$700,000',
     location: 'Washington, D.C.',
+    lat: 38.9072,
+    lng: -77.0369,
   },
   {
     id: '12',
@@ -98,6 +120,8 @@ const properties = [
     image: property12Image,
     price: '$1,800,000',
     location: 'New Orleans, Louisiana',
+    lat: 29.9511,
+    lng: -90.0715,
   },
   {
     id: '13',
@@ -105,6 +129,8 @@ const properties = [
     image: property13Image,
     price: '$500,000',
     location: 'Big Sky, Montana',
+    lat: 45.2848,
+    lng: -111.3684,
   },
   {
     id: '14',
@@ -112,6 +138,8 @@ const properties = [
     image: property14Image,
     price: '$900,000',
     location: 'Seattle, Washington',
+    lat: 47.6062,
+    lng: -122.3321,
   },
   {
     id: '15',
@@ -119,6 +147,8 @@ const properties = [
     image: property15Image,
     price: '$3,000,000',
     location: 'Hawaii, Hawaii',
+    lat: 19.8968,
+    lng: -155.5828,
   },
 ];
 
