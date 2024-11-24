@@ -13,6 +13,8 @@ const PropertyDetail = () => {
     return <div className="text-center mt-8">Property not found.</div>;
   }
 
+  console.log("Property ID:", id); // Add this line to log the property object
+
   return (
     <div className="max-w-4xl mx-auto mt-8 p-6 bg-white rounded shadow">
       {/* Property Details */}
